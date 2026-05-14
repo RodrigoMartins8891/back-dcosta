@@ -1,37 +1,95 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Back-end DCosta Ordenhadeiras
 
-## Getting Started
+API REST desenvolvida para gerenciamento do e-commerce DCosta Ordenhadeiras.
 
-First, run the development server:
+## Tecnologias
+
+- Node.js
+- Express
+- MySQL
+- JWT
+- Mercado Pago
+- bcrypt
+- dotenv
+
+---
+
+## Funcionalidades
+
+- Autenticação de usuários
+- Cadastro e login
+- CRUD de produtos
+- CRUD de categorias
+- Sistema de pedidos
+- Integração com Mercado Pago
+- Retry de pagamento
+- Painel administrativo
+- Controle de estoque
+- Upload de imagens
+- Histórico de pedidos
+
+---
+
+## Instalação
+
+Clone o projeto:
 
 ```bash
+git clone <url-do-repositorio>
+
+Entre na pasta:
+
+cd back-end
+
+Instale as dependências:
+
+npm install
+Variáveis de ambiente
+
+Crie um arquivo .env
+
+PORT=3001
+
+DB_HOST=localhost
+DB_USER=root
+DB_PASSWORD=sua_senha
+DB_NAME=dcosta_ordenhadeiras
+
+JWT_SECRET=sua_chave_jwt
+
+MP_ACCESS_TOKEN=seu_token_mercado_pago
+Rodando o projeto
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+ou
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+node server.js
+Estrutura
+src/
+ ├── controllers
+ ├── routes
+ ├── middleware
+ ├── database
+ ├── uploads
+ └── server.js
+Endpoints principais
+Auth
+POST /auth/register
+POST /auth/login
+Produtos
+GET /products
+POST /products
+PUT /products/:id
+DELETE /products/:id
+Pedidos
+GET /orders
+GET /orders/my
+POST /orders
+POST /orders/:id/retry-payment
+Integração Mercado Pago
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+O sistema utiliza checkout transparente via Mercado Pago para geração de pagamentos.
 
-## Learn More
+Autor
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-"# back-dcosta" 
+Rodrigo Martins
